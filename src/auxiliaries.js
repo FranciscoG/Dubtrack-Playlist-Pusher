@@ -104,3 +104,14 @@ export function click(el) {
   event.initEvent('click', true, false);
   el.dispatchEvent(event);
 }
+
+export function el(type, attr, text) {
+  var el = document.createElement(type);
+  for (var key in attr) {
+    el.setAttribute(key, attr[key]);
+  }
+  if (text) {
+    el.textContent = text;
+  }
+  return el;
+}
